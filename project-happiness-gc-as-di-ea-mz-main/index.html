@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!-- Metadata -->
+<head>
+  <meta charset='utf-8'>
+
+  <!-- Title -->
+  <title>Project Team ##: Topic, DS4200 F21</title>
+  
+  <!-- CSS Styling -->
+  <link rel='stylesheet' href='style.css'>
+
+  <!-- Favicons -->
+  <link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
+  <link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
+  <link rel='manifest' href='favicons/site.webmanifest'>
+  <link rel='shortcut icon' href='favicons/favicon.ico'>
+  <meta name='msapplication-TileColor' content='#da532c'>
+  <meta name='msapplication-config' content='favicons/browserconfig.xml'>
+  <meta name='theme-color' content='#ffffff'>
+</head>
+
+<!-- Main page content -->
+<body>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id='forkongithub'><a href='https://github.com/DS4200-Fall21-Sec02/project-happiness-gc-as-di-ea-mz'>Fork me on GitHub</a></span>
+
+  <!-- Writeup -->
+  <div class='content-column'>
+   <h1>Project Team ##: World Happiness Report, DS4200 F21</h1>
+    
+    <p><strong>Esther Anemeje</strong>, <strong>Gabriela Compagni</strong>, <strong>Divya Iyer</strong>, <strong>Abigail Sodergren</strong>, <strong>Minghua Zhang</strong></p>
+    
+    <p>Course Project as part of
+  <a href='https://northeastern.instructure.com/courses/18721'>DS4200 F21: Information Visualization</a>, 
+  taught by <a href='https://www.khoury.northeastern.edu/home/amosca/'>Prof. Ab Mosca</a>, 
+  <a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>, 
+  <a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.</p>
+    
+    
+    <h1>Abstract</h1>
+    
+    <p>The World Happiness Report annually ranks over 150 countries. This project aims to visualize happiness scores based on several factors. 
+      The relationship between features that affect happiness will be identified and explored through statistical analysis to determine the correlation 
+      between the various features and happiness score. This will be displayed in a dashboard format depicting the map of the world and will have the ability 
+      to toggle the factors measuring quality of life and the happiness index upon zooming into different countries or regions.</p>
+
+    
+    <h1>Visualization</h1>
+    
+    <p>Include the interactive visualization as part of this page. Static example follows.</p>
+
+
+<div class = 'content-column'>
+
+    <h2>World Happiness Map</h2>
+    <p>The first visualization shows the descriptive statistics of the Happiness Scores for the selected year. By visualizing these statistics, users can compare a nation's performance to the global average, minimum, or maximum. </p>
+
+  <p>The second visualization is a map of all the countries in the World Happienss Report with their Happiness Scores represented by different shades of red. Hover over a country to display their happiness score and other attributes, use the slider to toggle between years. Double click on a country to zoom in or use trackpad to manually zoom in or out. The descriptive statistics below will also update based on the selected year.</p>
+    </div>
+
+
+
+<div class = 'content-column'>
+    <div class='stats'>
+  <div class='count'><span class='max'></span>Max</div>
+  <div class='count'><span class='mean'></span>Mean</div>
+  <div class='count'><span class='min'></span>Min</div>
+</div>
+</div>
+
+    
+  </div>
+
+<div id="map">
+      <h2 id="selected-year">Year 2020</h2>
+      <input name="year" type="range" min="2018" max="2020" id="year-slider" value="2020">
+      </div>
+
+
+  
+  <!-- Visualization goes here -->
+  <div class='vis-holder'>
+  
+    <!-- Change viewbox to whatever you want, e.g., '0 0 1000 6000' This determines your aspect ratio and coordinate system -->    
+
+
+    <svg id='vis-svg-1'
+
+
+
+      preserveAspectRatio='xMidYMid meet' class='vis-svg' viewBox='0 0 1000 1000' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+
+
+
+  
+      
+    <!-- Don't delete the closing tag! -->
+    </svg>
+
+    <div class = 'content-column'>
+      <h1>Scatterplot Matrix</h1>
+    <p> The third visualization is a matrix of scatterplots that represents the attributes used in calculating a country’s happiness score, such as the healthy life expectancy, or corruption index, plotted against each other as well as the score itself, colored based on the region of the country. Try brushing over any datapoint to select all corresponding points. The titles located on a designated graph in each row corresponds to each of the graphs in that given row and given column. The significance of this matrix is to show how different factors correlate with each other and which factors have the strongest correlations with higher Happiness Scores. By highlighting countries in the same region, users can also see how specific regions perform across all factors. </p>
+      </div>
+
+    
+
+    <svg id='vis-svg-2'
+      preserveAspectRatio='xMidYMid meet' class='vis-svg' viewBox='0 -30 1000 1000' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+      
+      
+
+    <!-- Don't delete the closing tag! -->
+    </svg>
+
+    
+
+
+
+
+
+  </div>
+  
+  <!-- Further writeup -->
+  <div class = 'content-column'>
+
+    <h1>Demo Video</h1>
+    
+    <video controls width='100%'>
+      <source src='files/DS4200%20Project%20Demo.mp4' type='video/mp4'>
+      <track src='files/Demo%20Video%20Transcript.vtt' kind='subtitles' srclang='en' label="English" default>
+      <p>Your browser doesn't support HTML5 video. Here is
+       a <a href='main/files/DS4200%20Project%20Demo.mp4'>link to the video</a> instead.</p>
+    </video>
+
+    <h1>Visualization explanation</h1>
+    
+    <p>The main view displays the happiness index for each country in the world based on the scale of the color map used. 
+      One quantitative feature can be shown on the map at a time. Upon hovering over a country on the map, the user will be presented with pop-up information about
+      the country that is not intended to be displayed in a visual format, including the numeric value of the happiness score of that specific country. </p>
+    <p>Additionally, upon scrolling down from the world map view, a scatterplot matrix displays the relationships between happiness index and other quantitative 
+      attributes, such as the life expectancy or perceived corruption score, grouped visually by color into different geographical regions. 
+      The regional distinction also allows for an easier view of emerging patterns, especially with the available brushing and linking to highlight specific regions.
+    </p>
+
+    <a href='https://docs.google.com/presentation/d/1z-05rsSlAw1Dvu5LlNSuFZlzHh3dp6udH2OIdjs0LFE/edit?usp=sharing'>
+    Presentation Slides</a>
+
+    
+    <h1>Acknowledgments</h1>
+
+
+    <ul>
+      <li><a href='https://d3js.org/'>
+        D3: Data-Driven Documents</a>
+        by Mike Bostock is used for manipulating the DOM to create visualizations.
+      </li>
+      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+        Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+        by Chris Heilmann is used to create the banner that links back to the source code repository.
+      </li>
+      <li><a href='https://github.com/NEU-DS-4200-F20-Staff/Project'>
+        Project</a>
+        by Cody Dunne is used to create this assignment.
+      </li>
+      <li><a href='https://bl.ocks.org/mbostock/4063663'>
+        Scatterplot Matrix Brushing</a>
+        by Mike Bostock.
+      </li>
+      <li><a href='https://www.d3-graph-gallery.com/graph/choropleth_hover_effect.html'>
+        Choropleth map with hover effect in d3.js</a>
+        by Yan Holtz.
+      </li>
+      <li><a href='https://bl.ocks.org/d3noob/e549dc220052ac8214b9db6ce47d2a61'>
+        Map Pan and Zoom v5</a>
+        by d3noob
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src='https://d3js.org/d3.v5.min.js'></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+  <script src='js/visualization.js'></script>
+</body>
+</html>
